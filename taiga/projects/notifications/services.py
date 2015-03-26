@@ -269,7 +269,7 @@ def send_sync_notifications(notification_id):
 
     for user in notification.notify_users.distinct():
         context["user"] = user
-        email.send(user.email, context)
+        email.send(user, context)
 
     notification.delete()
 
